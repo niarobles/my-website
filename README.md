@@ -34,6 +34,7 @@ GitHub's guide: https://docs.github.com/en/pages/getting-started-with-github-pag
 | `talks.html` | Talks page |
 | `assets/styles.css` | Fonts, colors, spacing, and mobile layout |
 | `assets/links.js` | All external links and PDF destinations |
+| `assets/favicon.png` | Your Substack photo used as the browser-tab icon |
 | `assets/images/nia-autumn.webp` | Your autumn portrait |
 | `files/` | Your CV and candidacy presentation PDFs |
 
