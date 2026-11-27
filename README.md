@@ -22,6 +22,8 @@ The `.html` files now redirect old bookmarks to the clean page addresses. Upload
 
 The header and browser titles use **Nia Robles**. The CV page displays a wide embedded PDF viewer with browser controls. It starts with the thumbnail sidebar closed. Open PDF and Download links are below the viewer; Open PDF opens the document directly in the same tab.
 
+At window widths of 1100px or less, the navigation collapses behind a three-line menu button. Click it to open or close the links. Escape, clicking outside the header, or selecting a link also closes it. Wider windows show the horizontal navigation. If JavaScript is disabled, the navigation links remain visible.
+
 GitHub's static hosting serves each folder's `index.html`, so no custom server or routing service is needed. The trailing slash is normal. Visiting an old `.html` address automatically redirects to its new address.
 
 ## Replace the CV or slides
