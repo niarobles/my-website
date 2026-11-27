@@ -11,6 +11,18 @@ A static website using Alice for titles, Work Sans for text, and your lavender p
 
 The `.html` files now redirect old bookmarks to the clean page addresses. Upload those updated files too; do not leave the previous versions in place.
 
+## Menu size
+
+The menu labels now use a consistent **18px** size on desktop and in the collapsed menu. To adjust them, edit this single line near the top of `assets/site.css`:
+
+```css
+--menu-font-size: 18px;
+```
+
+All navigation labels use that setting. There are no additional font-size overrides or `!important` rules. Each page requests fresh styling on reload so stylesheet edits are picked up after GitHub publishes them.
+
+This release uses `assets/site.css` and `assets/site.js`. Upload the whole package, including every page HTML file and the assets folder. The old `assets/styles.css` and `assets/links.js` files are no longer used and can be removed from the repository.
+
 ## Page addresses and source files
 
 | Page | Address | Source file |
@@ -30,14 +42,14 @@ GitHub's static hosting serves each folder's `index.html`, so no custom server o
 
 Replace `files/cv.pdf` or `files/candidacy-slides.pdf` using the same filename. The CV preview and its links use the same PDF, so replacing that one file updates all of them.
 
-For external links and the candidacy slides, edit `assets/links.js`. Paths there are relative to the website root. The CV page uses direct `/files/cv.pdf` links and a direct iframe source in `cv/index.html`; if you rename that PDF, update all three references there. They work independently of JavaScript.
+For external links and the candidacy slides, edit `assets/site.js`. Paths there are relative to the website root. The CV page uses direct `/files/cv.pdf` links and a direct iframe source in `cv/index.html`; if you rename that PDF, update all three references there. They work independently of JavaScript.
 
 ## Other edits
 
 | File | Purpose |
 | --- | --- |
-| `assets/styles.css` | Fonts, palette, spacing, photo ratio, and responsive layout |
-| `assets/links.js` | External links and PDF destinations |
+| `assets/site.css` | Fonts, palette, spacing, photo ratio, and responsive layout |
+| `assets/site.js` | External links and PDF destinations |
 | `assets/favicon.png` | Your Substack image used as the browser-tab icon |
 | `assets/images/nia-autumn.webp` | Your About portrait, displayed at a 3:4 ratio |
 

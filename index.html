@@ -10,8 +10,16 @@
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/alice-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/work-sans-regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="assets/styles.css?v=9">
-  <script src="assets/links.js?v=7" defer></script>
+  <link rel="stylesheet" href="assets/site.css" id="site-styles">
+  <script>
+    (() => {
+      const stylesheet = document.getElementById("site-styles");
+      const freshUrl = new URL(stylesheet.href);
+      freshUrl.searchParams.set("updated", Date.now().toString());
+      stylesheet.href = freshUrl.href;
+    })();
+  </script>
+  <script src="assets/site.js?v=94bc6865b2e1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
