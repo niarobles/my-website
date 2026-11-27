@@ -30,7 +30,7 @@
   --body-size: clamp(1.125rem, 1.4vw, 1.8rem);
   --supporting-text-size: clamp(1rem, 1.17vw, 1.5rem);
   /* MENU LETTER SIZE: edit this single value. */
-  --menu-font-size: 18px;
+  --menu-font-size: 16px;
 }
 
 * { box-sizing: border-box; }
