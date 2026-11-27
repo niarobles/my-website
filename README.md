@@ -20,7 +20,7 @@ The `.html` files now redirect old bookmarks to the clean page addresses. Upload
 | Lecture Notes | `/lecture-notes/` | `lecture-notes/index.html` |
 | Talks | `/talks/` | `talks/index.html` |
 
-The header and browser titles use **Nia Robles**. The CV page displays the PDF in an embedded viewer and provides Open PDF and Download links.
+The header and browser titles use **Nia Robles**. The CV page displays a wide embedded PDF viewer with browser controls. It starts with the thumbnail sidebar closed. Open PDF and Download links are below the viewer; Open PDF opens the document directly in the same tab.
 
 GitHub's static hosting serves each folder's `index.html`, so no custom server or routing service is needed. The trailing slash is normal. Visiting an old `.html` address automatically redirects to its new address.
 
@@ -28,7 +28,7 @@ GitHub's static hosting serves each folder's `index.html`, so no custom server o
 
 Replace `files/cv.pdf` or `files/candidacy-slides.pdf` using the same filename. The CV preview and its links use the same PDF, so replacing that one file updates all of them.
 
-If you change a PDF filename or external destination, update `assets/links.js`. PDF paths there are relative to the website root, for example `files/cv.pdf`. If you change the CV path, also update the initial iframe and PDF links in `cv/index.html` so they continue working without JavaScript.
+For external links and the candidacy slides, edit `assets/links.js`. Paths there are relative to the website root. The CV page uses direct `/files/cv.pdf` links and a direct iframe source in `cv/index.html`; if you rename that PDF, update all three references there. They work independently of JavaScript.
 
 ## Other edits
 
