@@ -1,58 +1,58 @@
-# Nia Robles Del Pino — personal website
+# Nia Robles — personal website
 
-A static website recreated from your design. It uses Alice for titles, Work Sans for paragraphs and navigation, and your lavender palette:
+A static website using Alice for titles, Work Sans for text, and your lavender palette. Fonts, photographs, CV, and candidacy slides are included. No build step is required.
 
-- Background: `#E6E1FA`
-- Accent: `#CDC7E6`
-- Text: `#371A53`
+## Update the existing GitHub website
 
-The fonts and photograph are included. No installation, build command, account keys, or framework is needed.
+1. Unzip `nia-website.zip`.
+2. Upload the **contents** of the `nia-website` folder to the root of your existing GitHub repository. Include the new `cv`, `talks`, and `lecture-notes` folders, the updated `index.html`, the three legacy `.html` files, and `assets`.
+3. Keep your existing `CNAME` file and GitHub Pages settings. You do not need to change your domain's DNS.
+4. Commit the upload and allow GitHub Pages to publish the update.
 
-## Preview on your computer
+The `.html` files now redirect old bookmarks to the clean page addresses. Upload those updated files too; do not leave the previous versions in place.
 
-Unzip the download, then open `index.html` in a browser. All four pages work directly from the folder.
+## Page addresses and source files
 
-## Put it on GitHub Pages
+| Page | Address | Source file |
+| --- | --- | --- |
+| About | `/` | `index.html` |
+| CV | `/cv/` | `cv/index.html` |
+| Lecture Notes | `/lecture-notes/` | `lecture-notes/index.html` |
+| Talks | `/talks/` | `talks/index.html` |
 
-1. Create a GitHub repository. Name it `YOUR-USERNAME.github.io` if you want the site at `https://YOUR-USERNAME.github.io/`. A different repository name also works.
-2. Upload the **contents** of this folder to the repository. `index.html` must be at the top level, alongside `cv.html`, `lecture-notes.html`, `talks.html`, and the `assets` folder. Do not upload the ZIP itself.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**. Select **main** and **/(root)**, then **Save**.
-5. GitHub will display the website address on that page when publication finishes.
+The header and browser titles use **Nia Robles**. The CV page displays the PDF in an embedded viewer and provides Open PDF and Download links.
 
-Relative paths let this site work both at a username domain and inside a project repository.
+GitHub's static hosting serves each folder's `index.html`, so no custom server or routing service is needed. The trailing slash is normal. Visiting an old `.html` address automatically redirects to its new address.
 
-GitHub's guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+## Replace the CV or slides
 
-## Edit the website
+Replace `files/cv.pdf` or `files/candidacy-slides.pdf` using the same filename. The CV preview and its links use the same PDF, so replacing that one file updates all of them.
 
-| File | What it contains |
+If you change a PDF filename or external destination, update `assets/links.js`. PDF paths there are relative to the website root, for example `files/cv.pdf`. If you change the CV path, also update the initial iframe and PDF links in `cv/index.html` so they continue working without JavaScript.
+
+## Other edits
+
+| File | Purpose |
 | --- | --- |
-| `index.html` | About page and biography |
-| `cv.html` | CV page |
-| `lecture-notes.html` | Lecture Notes page, currently WIP |
-| `talks.html` | Talks page |
-| `assets/styles.css` | Fonts, colors, spacing, and mobile layout |
-| `assets/links.js` | All external links and PDF destinations |
-| `assets/favicon.png` | Your Substack photo used as the browser-tab icon |
-| `assets/images/nia-autumn.webp` | Your autumn portrait |
-| `files/` | Your CV and candidacy presentation PDFs |
+| `assets/styles.css` | Fonts, palette, spacing, photo ratio, and responsive layout |
+| `assets/links.js` | External links and PDF destinations |
+| `assets/favicon.png` | Your Substack image used as the browser-tab icon |
+| `assets/images/nia-autumn.webp` | Your About portrait, displayed at a 3:4 ratio |
 
-The Blog and Amapolas links point to your two Substacks. Your museum, writing-award, MoMA, and preprint links are connected, and the CV and candidacy slides are included as PDFs.
+Navigation and footer HTML are repeated in the four page source files listed above. Update all four if you change their wording.
 
-### Replace the CV or slides later
+The footer retains the copyright notice. Blog and Amapolas link directly to your Substacks.
 
-Replace the corresponding PDF in `files/` with a newer copy using the same filename. The current entries at the top of `assets/links.js` are:
+## Local preview
 
-```js
-cv: "files/cv.pdf",
-candidacySlides: "files/candidacy-slides.pdf",
+Directory-based addresses should be previewed through a local server. From this folder, run:
+
+```sh
+python3 -m http.server 8000
 ```
 
-To change any external link, edit its URL in `assets/links.js`. An empty string leaves the corresponding text underlined without sending visitors to a broken destination.
-
-The header and footer are ordinary HTML in each page, so each page works even without JavaScript. If you later rename a navigation item, update it in all four HTML files. The footer is only the copyright notice you requested; edit its year in the four HTML files when needed.
+Then open `http://localhost:8000/`. On the deployed site, the browser's PDF viewer provides the CV preview; the Open PDF link is available for browsers that handle embedded PDFs differently.
 
 ## Fonts and ownership
 
-Alice and Work Sans are bundled under their SIL Open Font Licenses, included in `assets/fonts/`. The website text and photograph are yours. No license granting reuse of your personal content is added.
+Alice and Work Sans are bundled under the SIL Open Font License. Their license files are in `assets/fonts/`. The website text and photographs remain yours.
