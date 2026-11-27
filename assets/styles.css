@@ -318,3 +318,12 @@ p { margin: 0 0 1.05em; }
   .cv-preview { min-height: 36rem; }
   .site-footer { padding-block: 1.25rem 1rem; font-size: 0.875rem; }
 }
+.site-header.menu-ready .site-nav a {
+  font-size: clamp(1rem, 1.17vw, 1.5rem);
+}
+
+@media (max-width: 1100px) {
+  .site-header.menu-ready .site-nav a {
+    font-size: 1.125rem;
+  }
+}
