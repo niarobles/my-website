@@ -13,13 +13,15 @@ The `.html` files now redirect old bookmarks to the clean page addresses. Upload
 
 ## Menu size
 
-The menu labels now use a consistent **18px** size on desktop and in the collapsed menu. To adjust them, edit this single line near the top of `assets/site.css`:
+The menu labels now use a consistent **15px** size on desktop and in the collapsed menu. To adjust them, edit this single line near the top of `assets/site.css`:
 
 ```css
---menu-font-size: 18px;
+--menu-font-size: 15px;
 ```
 
-All navigation labels use that setting. There are no additional font-size overrides or `!important` rules. Each page requests fresh styling on reload so stylesheet edits are picked up after GitHub publishes them.
+All navigation labels use that setting. There are no additional font-size overrides or `!important` rules. Pages load the stylesheet directly, so styling is applied before the page is displayed. The stylesheet URL has a fixed version value, allowing browsers to cache it between visits.
+
+For a future CSS update, change the value after `?v=` on the stylesheet link in all four page HTML files if needed to refresh cached styling. Commit the CSS and HTML files together. Do not add a script that changes the stylesheet address while the page is loading.
 
 This release uses `assets/site.css` and `assets/site.js`. Upload the whole package, including every page HTML file and the assets folder. The old `assets/styles.css` and `assets/links.js` files are no longer used and can be removed from the repository.
 
